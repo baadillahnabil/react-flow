@@ -9,11 +9,11 @@ export default class App extends Component {
   state = {
     persons: [
       {
-        name: 'Nabil',
+        name: 'Maxi',
         age: 22
       },
       {
-        name: 'Budo',
+        name: 'Doctor',
         age: 15
       },
       {
@@ -21,6 +21,27 @@ export default class App extends Component {
         age: 57
       }
     ]
+  }
+
+  onChangeAge = () => {
+    this.setState(prevState => {
+      return {
+        persons: [
+          {
+            name: 'Maxi',
+            age: Math.floor(Math.random() * 100)
+          },
+          {
+            name: 'Doctor',
+            age: Math.floor(Math.random() * 100)
+          },
+          {
+            name: 'Brian Neil',
+            age: Math.floor(Math.random() * 100)
+          }
+        ]
+      }
+    })
   }
 
   render() {
@@ -37,6 +58,7 @@ export default class App extends Component {
             "You know who i am"
           </Person>
           <Person name={persons[2].name} age={persons[2].age} />
+          <button onClick={this.onChangeAge}>Change Ages</button>
         </div>
       </Fragment>
     )
