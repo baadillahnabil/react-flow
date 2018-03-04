@@ -1,26 +1,25 @@
 /* @flow */
 
 import React, { Component, Fragment } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import Person from './Components/Person/Person'
 
-// $FlowIgnore: suppressing this error
-class App extends Component {
+/* $FlowIgnore: suppressing this error */
+export default class App extends Component {
   render() {
     return (
       <Fragment>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Hai, Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+          <p>Welcome To React</p>
+          <Person name="Nabil" age="22">
+            "You know who i am"
+          </Person>
+          <Person name="Budo" age="12">
+            "You know who i am"
+          </Person>
+          <Person name="Brian O'Neil" age="43" />
         </div>
       </Fragment>
     )
   }
 }
-
-export default App
