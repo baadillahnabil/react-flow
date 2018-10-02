@@ -16,9 +16,17 @@ export default class Person extends Component {
         cursor: 'pointer'
       },
       inputName: {
+        display: 'block',
+        'text-allign': 'center',
+        width: '94%',
         font: 'inherit',
-        padding: '5px'
-      }
+        padding: '20px',
+        'box-shadow':
+          '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+        'margin-bottom': '10px',
+        border: 'none'
+      },
+      inputStyle: {}
     }
 
     return (
@@ -36,12 +44,14 @@ export default class Person extends Component {
             onChange={this.props.onInputChanged}
             value={this.props.name}
           />
+          {/* <div style={style.inputStyle}> */}
           <input
             style={style.inputName}
             type="number"
             onChange={this.props.onAgeChanged}
             value={this.props.age}
           />
+          {/* </div> */}
           {this.props.children}
         </div>
       </Fragment>
