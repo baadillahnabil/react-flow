@@ -36,6 +36,12 @@ export default class Person extends Component {
             onChange={this.props.onInputChanged}
             value={this.props.name}
           />
+          <input
+            style={style.inputName}
+            type="number"
+            onChange={this.props.onAgeChanged}
+            value={this.props.age}
+          />
           {this.props.children}
         </div>
       </Fragment>
