@@ -44,7 +44,7 @@ export default class App extends Component {
     this.updatePersonsState(persons)
   }
 
-  // Make Two-Way Binding when input type changed
+  // Make Two-Way Binding when input type on Name changed
   changePersonName = (event: any, personId: string | number) => {
     const personIndex: number = this.state.persons.findIndex(person => {
       return person.id === personId
@@ -54,6 +54,22 @@ export default class App extends Component {
       ...this.state.persons[personIndex]
     }
     person.name = event.target.value
+
+    const persons: Object[] = [...this.state.persons]
+    persons[personIndex] = person
+    this.updatePersonsState(persons)
+  }
+
+  // Make Two-Way Binding when input type on Age changed
+  changePersonAge = (event: any, personId: string | number) => {
+    const personIndex: number = this.state.persons.findIndex(person => {
+      return person.id === personId
+    })
+
+    let person: Object = {
+      ...this.state.persons[personIndex]
+    }
+    person.age = event.target.value
 
     const persons: Object[] = [...this.state.persons]
     persons[personIndex] = person
@@ -104,9 +120,8 @@ export default class App extends Component {
                 name={person.name}
                 age={person.age}
                 onRemoveClicked={this.removePersonComponent.bind(this, index)}
-                onInputChanged={event =>
-                  this.changePersonName(event, person.id)
-                }
+                onNameChanged={event => this.changePersonName(event, person.id)}
+                onAgeChanged={event => this.changePersonAge(event, person.id)}
               />
             )
           })}
