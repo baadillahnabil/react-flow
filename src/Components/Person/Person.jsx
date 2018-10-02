@@ -9,11 +9,12 @@ export default class Person extends Component {
     // Inline Styling
     const style: Object = {
       removeBtn: {
-        backgroundColor: 'white',
+        backgroundColor: 'red',
         font: 'inherit',
         border: '1px solid red',
         padding: '5px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        color: 'white'
       },
       inputName: {
         font: 'inherit',
@@ -25,7 +26,7 @@ export default class Person extends Component {
       <Fragment>
         <div className="Person">
           <button style={style.removeBtn} onClick={this.props.onRemoveClicked}>
-            Remove This Person
+            X
           </button>
           <p>
             My Name is {this.props.name} and my age is {this.props.age}
