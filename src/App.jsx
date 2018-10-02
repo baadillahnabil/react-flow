@@ -99,12 +99,20 @@ export default class App extends Component {
   render() {
     // Inline Styling
     const style: Object = {
-      toggleBtn: {
+      toggleBtnOn: {
         backgroundColor: 'white',
         font: 'inherit',
         border: '1px solid blue',
         padding: '8px',
         cursor: 'pointer'
+      },
+      toggleBtnOff: {
+        backgroundColor: 'red',
+        font: 'inherit',
+        border: '1px solid red',
+        padding: '8px',
+        cursor: 'pointer',
+        color: 'white'
       }
     }
 
@@ -134,7 +142,12 @@ export default class App extends Component {
       <Fragment>
         <div className="App">
           <p>Welcome To React</p>
-          <button style={style.toggleBtn} onClick={this.togglePersons}>
+          <button
+            style={
+              this.state.showPersons ? style.toggleBtnOn : style.toggleBtnOff
+            }
+            onClick={this.togglePersons}
+          >
             Toggle Persons
           </button>
           {personsComponent}
