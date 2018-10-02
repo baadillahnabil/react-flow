@@ -105,6 +105,9 @@ export default class App extends Component {
         border: '1px solid blue',
         padding: '8px',
         cursor: 'pointer'
+      },
+      inlineCard: {
+        display: 'flex'
       }
     }
 
@@ -112,7 +115,7 @@ export default class App extends Component {
     let personsComponent: any = null
     if (this.state.showPersons) {
       personsComponent = (
-        <div>
+        <div style={style.inlineCard}>
           {this.state.persons.map((person, index) => {
             return (
               <Person
